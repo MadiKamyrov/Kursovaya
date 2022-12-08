@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0d6efd;
+}
+
+a {
+	color: whitesmoke;
+}
+
+.main-header{
+	padding-bottom: 20px;
+}
+
+.cart{
+	padding-right: 300px;
+	padding-left: 300px;
+}
+
+.checkout{
+	padding-right: 300px;
+	padding-left: 300px;
+}
+
+.store {
+	padding-right: 350px;
+	padding-left: 350px;
+}
+
+.main{
+	display: flex;
+	justify-content: center;
+	padding-top: 200px;
+}
+
+
+.login {
+    width: 360px;
+    height: min-content;
+    padding: 20px;
+    border-radius: 12px;
+	background-color: snow;
+}
+
+.login h1 {
+    font-size: 36px;
+    margin-bottom: 25px;
+}
+
+.login form {
+    font-size: 20px;
+}
+
+.login form .form-group{
+    margin-bottom: 12px;
+}

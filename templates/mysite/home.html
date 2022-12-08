@@ -1,0 +1,181 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link type="text/css" href="{% static 'mysite/css/style.css' %}" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width initial-scale = 1, maximum-scale = 1, minimum-scale= 1"/>
+    <title>Title</title>
+</head>
+<body>
+<header class="main-header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Pizzeria</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item active">
+            <a href="{% url 'store' %}">
+          <img src="{% static 'mysite/images/pizza.png' %}" style="height: 50px; padding-right: 20px" >
+            </a>
+        </li>
+      </ul>
+      <div class="form inline my-2 my-lg-0">
+          <a href="{% url 'base' %}" class="btn btn-warning">Logout</a>
+
+          <a href="{% url 'cart' %}" >
+              <img id="cart-icon" src="{% static 'mysite/images/cart.png' %}">
+          </a>
+          <p id="cart-total">0</p>
+      </div>
+    </div>
+  </div>
+</nav>
+</header>
+
+<section class="main-content">
+    {% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-sm-6 mb-3">
+                <div class="product-card">
+                    <div class="product-thumb">
+                         <a href="#"><img src="{% static 'mysite/images/pizza.png' %}" style="height: 100px" alt=""></a>
+                    </div>
+                    <div class="product-details">
+                        <h4><a href="#">Маргарита</a></h4>
+                        <p>Это классический вариант итальянской пиццы на тонком тесте с минимальным набором ингредиентов. В её состав входят томаты, моцарелла, базилик и оливковое масло.  А знаешь ли ты историю появления этой пиццы? На торжестве в честь дня рождения королевы Италии Маргариты Савойской, была подана пицца в виде итальянского флага.</p>
+                        <div class="product-bottom-details d-flex justify-content-between">
+                            <div class="product-price">
+                                <small>$230.99</small> $99
+                            </div>
+                            <div class="product-links">
+                                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                                <a href="#"><i class="far fa-heart"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6 mb-3">
+                <div class="product-card">
+                    <div class="product-thumb">
+                         <a href="#"><img src="{% static 'mysite/images/pizza.png' %}" style="height: 100px" alt=""></a>
+                    </div>
+                    <div class="product-details">
+                        <h4><a href="#">Неаполитанская</a></h4>
+                        <p>В составе настоящей неаполитанской пиццы ты не встретишь ничего, кроме традиционного сыра пармезан, томатов, орегано, анчоусов, оливкового масла и базилика. Некоторые пиццерии добавляют туда консервированную рыбу, но это уже отступление от классического рецепта. А еще настоящую «Неаполитано» готовят на дровах.</p>
+                        <div class="product-bottom-details d-flex justify-content-between">
+                            <div class="product-price">
+                                $99
+                            </div>
+                            <div class="product-links">
+                                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                                <a href="#"><i class="far fa-heart"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6 mb-3">
+                <div class="product-card">
+                    <div class="product-thumb">
+                         <a href="#"><img src="{% static 'mysite/images/pizza.png' %}" style="height: 100px" alt=""></a>
+                    </div>
+                    <div class="product-details">
+                        <h4><a href="#">Четыре сыра</a></h4>
+                        <p>Настоящий праздник для любителей сыров. Насыщенный вкус этой пицце придают 4 разных сорта сыра, входящие в начинку. Для приготовления пиццы «Четыре сыра» используют: моцареллу, пармезан, сыр фонтина  и пикантный дор-блю.</p>
+                        <div class="product-bottom-details d-flex justify-content-between">
+                            <div class="product-price">
+                                <small>$230.99</small> $99
+                            </div>
+                            <div class="product-links">
+                                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                                <a href="#"><i class="far fa-heart"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6 mb-3">
+                <div class="product-card">
+                    <div class="product-thumb">
+                          <a href="#"><img src="{% static 'mysite/images/pizza.png' %}" style="height: 100px" alt=""></a>
+                    </div>
+                    <div class="product-details">
+                        <h4><a href="#">Пепперони</a></h4>
+                        <p>Самая острая пицца в мире!</p>
+                        <div class="product-bottom-details d-flex justify-content-between">
+                            <div class="product-price">
+                                <small>$230.99</small> $99
+                            </div>
+                            <div class="product-links">
+                                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                                <a href="#"><i class="far fa-heart"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6 mb-3">
+                <div class="product-card">
+                    <div class="product-thumb">
+                           <a href="#"><img src="{% static 'mysite/images/pizza.png' %}" style="height: 100px" alt=""></a>
+                    </div>
+                    <div class="product-details">
+                        <h4><a href="#">Капричоза</a></h4>
+                        <p>В составе пиццы: артишоки, чёрные оливки и грибы, а также томаты и сыр. Эта пицца отлично подойдет для вегетарианцев, она очень вкусная и сытная, благодаря сочетанию грибов и томатов.</p>
+                        <div class="product-bottom-details d-flex justify-content-between">
+                            <div class="product-price">
+                                <small>$230.99</small> $99
+                            </div>
+                            <div class="product-links">
+                                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                                <a href="#"><i class="far fa-heart"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6 mb-3">
+                <div class="product-card">
+                    <div class="product-thumb">
+                        <a href="#"><img src="{% static 'mysite/images/pizza.png' %}" style="height: 100px" alt=""></a>
+                    </div>
+                    <div class="product-details">
+                        <h4><a href="#">Сицилийская</a></h4>
+                        <p>Отличается квадратной формой и толстой основой. Название говорит само за себя о ее происхождении, в качестве начинки выступают анчоусы, а вот сыр кладут под соус.</p>
+                        <div class="product-bottom-details d-flex justify-content-between">
+                            <div class="product-price">
+                                <small>$230.99</small> $99
+                            </div>
+                            <div class="product-links">
+                                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                                <a href="#"><i class="far fa-heart"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock content %}
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
+</body>
+</html>
